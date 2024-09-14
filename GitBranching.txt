@@ -1,0 +1,6 @@
+git branch shows on which branch you are,
+git checkout -b "Searching-is-not-done" to create a new branch,
+git checkout <branch-name> to switch to a branch
+git add .
+git commit -m ""
+git push origin <bracnch name>
