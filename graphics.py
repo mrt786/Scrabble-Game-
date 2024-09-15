@@ -1,5 +1,6 @@
 # Add the graphics (turtle) related code in this file
 from squares import *
+from turtle import Turtle
 # this function is to draw the square
 class Grid:
     #constructor for the class
@@ -24,6 +25,7 @@ class Grid:
         turtle.goto(self.x,self.y)#left most corner
         turtle.pendown()
         list = []
+        print(turtle.xcor(),turtle.ycor())
         for i in range(0,size*size):
             if i != 0:
                 if i % 15 == 0:  # as the grid size is fixed i.e 15
@@ -33,7 +35,12 @@ class Grid:
                     list = []
             list.append([int(turtle.xcor()),int(turtle.ycor())," "])
             Square(turtle,self.boxWidth,self.boxHeight,turtle.xcor(),turtle.ycor()," ") #grid is empty
-            # if(i/15 == 7):
-            #     print(self.tiles)
-            #     return
         self.tiles.append(list) 
+    def returnGoti(self,gotianRedraw):
+        for i in gotianRedraw:
+            self.tiles[i[0]][i[1]][2] = " "
+            t1 = Turtle()
+            t1.penup()
+            t1.goto(self.tiles[i[0]][i[1]][0] ,self.tiles[i[0]][i[1]][1])
+            t1.pendown()
+            Square(t1, self.boxWidth,self.boxHeight,t1.xcor(),t1.ycor()," " )

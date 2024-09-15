@@ -1,0 +1,2 @@
+Player: rehan
+bomb: 25
